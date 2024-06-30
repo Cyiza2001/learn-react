@@ -1,11 +1,18 @@
 import "./App.css";
+const Person = () => {
+  return (
+    <>
+      <h1>Name: Gihayima</h1>
+      <h2>Last Name: mapepe</h2>
+      <h6>Age: 23</h6>
+    </>
+  );
+};
 
 const App = () => {
-  const name = "manyembua";
-  const isNameShowing = false;
   return (
     <div className="App">
-      <h1>Ndahitumye sha nubw nkiri {isNameShowing ? name : "Djibuji"}</h1>
+      <Person />
     </div>
   );
 };
