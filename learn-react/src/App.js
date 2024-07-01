@@ -1,19 +1,20 @@
+import { useState, useEffect } from "react";
 import "./App.css";
-const Person = (props) => {
-  return (
-    <>
-      <h1>Name: {props.name}</h1>
-      <h2>Last Name:{props.lastName}</h2>
-      <h6>Age: {props.age}</h6>
-    </>
-  );
-};
 
 const App = () => {
+  const [counter, setCounter] = useState(0);
+  useEffect(() => {
+    alert("Reload");
+  });
   return (
     <div className="App">
-      <Person name="djibuji" lastName="mabwa" age={21} />
-      <Person name="sumbirigi" lastName="gikwavu" age={24} />
+      <button onClick={() => setCounter((prevCount) => prevCount - 1)}>
+        -
+      </button>
+      <h1> {counter}</h1>
+      <button onClick={() => setCounter((prevCount) => prevCount + 1)}>
+        +
+      </button>
     </div>
   );
 };
