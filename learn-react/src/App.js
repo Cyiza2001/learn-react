@@ -1,22 +1,21 @@
-import { useState, useEffect } from "react";
-import "./App.css";
+import React from "react";
+import { useEffect } from "react";
+
+//56a8f03b
+const API_URL = "http://www.omdbapi.com?apikey=56a8f03b";
 
 const App = () => {
-  const [counter, setCounter] = useState(0);
+  const searchMovies = async (title) => {
+    const response = await fetch(`${API_URL}&s=${title}`);
+    const data = await response.json();
+    console.log(data.Search);
+  };
+
   useEffect(() => {
-    setCounter(100);
+    searchMovies("spiderman");
   }, []);
-  return (
-    <div className="App">
-      <button onClick={() => setCounter((prevCount) => prevCount - 1)}>
-        -
-      </button>
-      <h1> {counter}</h1>
-      <button onClick={() => setCounter((prevCount) => prevCount + 1)}>
-        +
-      </button>
-    </div>
-  );
+
+  return <h1>APP</h1>;
 };
 
 export default App;
