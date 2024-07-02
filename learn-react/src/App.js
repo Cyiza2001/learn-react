@@ -4,8 +4,8 @@ import "./App.css";
 const App = () => {
   const [counter, setCounter] = useState(0);
   useEffect(() => {
-    alert("Reload");
-  });
+    setCounter(100);
+  }, []);
   return (
     <div className="App">
       <button onClick={() => setCounter((prevCount) => prevCount - 1)}>
